@@ -1,0 +1,9 @@
+require 'ostack_util'
+# Runs when gem is run from command line with arguments and options.
+
+# Will make the log file in the users' home directory, change this to log to a different location
+$FILE_LOG = OstackUtil.create_log(File.expand_path('~/OstackUtil_LOG.log'), Logger::DEBUG)
+$STD_LOG = OstackUtil.create_log(nil, Logger::INFO)
+
+
+OstackUtil::Commands.start(ARGV)
